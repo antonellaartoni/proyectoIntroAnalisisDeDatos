@@ -1,122 +1,136 @@
 
 # 📊 Análisis del Mercado Laboral y Tendencias Salariales en Inteligencia Artificial (2025)
 
-Este proyecto presenta un análisis de datos enfocado en comprender la evolución, demanda y tendencias salariales del mercado global de empleo en Inteligencia Artificial (IA). Basado en un dataset con más de **15.000 ofertas laborales**, busca identificar:
+Este proyecto analiza el *Global AI Job Market & Salary Trends 2025*, un dataset con miles de ofertas laborales globales relacionadas con Inteligencia Artificial y desarrollo de software. El objetivo es comprender:
 
-* Cómo influye la especialización en IA en los salarios.
-* Qué habilidades son más demandadas.
-* Qué regiones ofrecen las mejores oportunidades.
-* Cómo se posicionan los roles de IA frente a roles tradicionales.
+* Cómo impacta la especialización en IA en los salarios.
+* Qué habilidades son más demandadas y mejor pagadas.
+* Cómo varían las oportunidades según la experiencia y región.
 
 ---
 
 ## 📌 Objetivo del Proyecto
 
-El objetivo principal es responder **qué exigen las empresas líderes en tecnología** y cómo la IA está redefiniendo el panorama laboral global.
+El proyecto busca responder **qué exigen las grandes empresas** y cómo la IA está influyendo en los salarios y oportunidades laborales.
 
-Este análisis proporciona una visión clara sobre:
+A partir del análisis realizado en Python, se estudian:
 
-* La relación entre especialización en IA y nivel salarial.
-* Las habilidades técnicas con mayor impacto económico.
-* Cómo cambia el mercado según nivel de experiencia y ubicación geográfica.
+* Tendencias salariales según rol y seniority.
+* Comparaciones entre roles IA y No IA.
+* Habilidades más requeridas por el mercado.
+* Regiones mejor pagadas.
 
 ---
 
 ## 💡 Preguntas Clave de Investigación
 
-### 1. Impacto de la IA en el Salario
+### 1️⃣ Impacto de la IA en el salario
 
-¿Cómo influye la adopción y especialización en Inteligencia Artificial en los salarios de los desarrolladores, considerando su nivel de experiencia y la región donde trabajan?
+¿Cómo influye la especialización en Inteligencia Artificial en el salario de los desarrolladores, considerando nivel de experiencia y región?
 
-### 2. Habilidades de Alto Valor
+### 2️⃣ Habilidades de Alto Valor
 
-¿Qué habilidades relacionadas con IA están asociadas con salarios más altos y mayor demanda laboral a nivel global?
+¿Qué habilidades asociadas con IA están relacionadas con mejores salarios y mayor demanda global?
 
 ---
 
 ## 🛠️ Metodología
 
-El análisis se desarrolló mediante un pipeline de procesamiento de datos en **Python**, utilizando Pandas para la manipulación y Matplotlib/Seaborn para las visualizaciones.
+El análisis se realizó en Python dentro de un entorno Jupyter Notebook.
 
-### **Pasos principales del proyecto:**
+### **1. Descarga y Carga del Dataset**
 
-#### 1. Adquisición y Limpieza del Dataset
+Se utilizó **KaggleHub** para descargar automáticamente el dataset.
 
-* Dataset utilizado: *Global AI Job Market & Salary Trends 2025* (descargado desde Kaggle vía KaggleHub).
-* Verificación de valores nulos, duplicados y formato de datos.
-* Columnas clave: `salary_usd`, `experience_level`, `job_title`, etc.
+### **2. Limpieza y Exploración Inicial**
 
-#### 2. Ingeniería de Características
+* Inspección de columnas y primeros registros.
+* Verificación de tipos de datos.
+* Revisión de valores nulos o inconsistencias.
 
-Se creó la columna **`rol_ia`** categorizando los puestos como:
+### **3. Ingeniería de Características**
+
+Se creó la columna `rol_ia`, clasificando puestos como:
 
 * **IA**
 * **No_IA**
 
-Basándose en palabras clave como:
-*Machine Learning, Deep Learning, NLP, Computer Vision, AI Engineer, Research Scientist*, etc.
+Basado en palabras clave como *Machine Learning, NLP, Deep Learning, Computer Vision, AI Engineer, Research Scientist*.
 
-#### 3. Análisis Salarial Estratificado
+### **4. Análisis Salarial**
 
-Se calcularon promedios salariales diferenciados por:
+Se evaluaron diferencias de salario según:
 
-* Nivel de experiencia: `EN`, `MI`, `SE`, `EX`
-* Tipo de rol: IA vs No_IA
-* Ubicación geográfica de la compañía
+* Rol (IA vs No IA)
+* Nivel de experiencia (`EN`, `MI`, `SE`, `EX`)
+* Distribución general de salarios
 
-#### 4. Análisis de Habilidades y su Impacto Salarial
+Se realizó un enfoque especial en roles de seniority alto (SE y EX), tal como se desarrolla en el notebook.
 
-* Identificación de las skills más frecuentes
-* Cálculo del salario promedio asociado
-* Obtención del **Top 10 de habilidades mejor pagadas**
+### **5. Análisis de Habilidades**
+
+Se analizaron:
+
+* Frecuencia de habilidades técnicas solicitadas
+* Salario asociado a cada skill
+* Identificación de habilidades de alto impacto
 
 ---
 
 ## 📈 Resultados e Insights Clave
 
-### 🔹 1. IA aumenta el salario en niveles altos (SE y EX)
+### 🔹 1. La IA incrementa el salario en niveles altos
 
-Los roles IA presentan salarios **ligeramente superiores**:
+El análisis mostró que para niveles **Senior (SE)** y **Executive (EX)**, los roles relacionados con IA presentan un salario promedio superior al de roles No IA.
 
-| Nivel   | IA (USD)     | No IA (USD) |
-| ------- | ------------ | ----------- |
-| SE / EX | **$164,355** | $162,423    |
-
-La diferencia no es extrema, pero es **consistente en todas las regiones**.
+Esta brecha es consistente, aunque no extremadamente pronunciada, y se mantiene en diferentes países.
 
 ---
 
-### 🔹 2. Regiones Mejor Pagadas
+### 🔹 2. Relación entre Experiencia y Salario
 
-Los países con salarios promedio más altos fueron:
+La tendencia observada confirma:
 
-* 🇨🇭 **Suiza**
-* 🇳🇴 **Noruega**
+> **A mayor seniority, mayor salario**, independientemente del rol y región.
 
-Destacan por:
-
-* Alto costo de vida
-* Fuerte inversión en tecnología
-* Políticas laborales robustas
+Además, la transición entre cada nivel (EN → MI → SE → EX) muestra incrementos salariales claros y sostenidos.
 
 ---
 
-### 🔹 3. Habilidades de Mayor Impacto Salarial
+### 🔹 3. Distribución de Salarios
 
-El análisis reveló que:
+El notebook reveló que:
 
-* Las **skills más especializadas** no son las más frecuentes en las ofertas.
-* Aun así, **concentran los salarios más altos** del mercado.
+* La mayoría de los salarios se concentran en un rango medio.
+* Existen outliers asociados a roles muy especializados o regiones de alto costo.
+
+---
+
+### 🔹 4. Habilidades Más Demandadas
+
+Se identificaron las skills con mayor frecuencia en ofertas laborales. Este análisis permite observar:
+
+* Qué tecnologías dominan el mercado actual.
+* Qué lenguajes y frameworks son imprescindibles.
+
+### 🔹 5. Habilidades Mejor Pagadas
+
+El cruce entre salario y habilidades mostró que:
+
+* Las habilidades más especializadas **no son las más frecuentes**,
+* pero sí están asociadas a los **salarios más altos**.
+
+Esto sugiere nichos de gran valor para desarrolladores avanzados.
 
 ---
 
 ## 💻 Tecnologías Utilizadas
 
 * **Python**
-* **Pandas** (Limpieza y manipulación de datos)
-* **Matplotlib** (Visualización)
-* **Seaborn** (Visualización estadística)
-* **KaggleHub** (Descarga del dataset)
+* **Pandas** — limpieza y análisis de datos
+* **Matplotlib** — visualizaciones
+* **Seaborn** — visualización estadística
+* **KaggleHub** — descarga automatizada del dataset
 
 ---
 
@@ -126,7 +140,7 @@ El análisis reveló que:
 ├── data/
 │   └── dataset.csv
 ├── notebooks/
-│   └── analisis.ipynb
+│   └── ProyectoFinal_ARTONI.ipynb
 ├── src/
 │   ├── procesamiento.py
 │   └── visualizaciones.py
@@ -135,6 +149,10 @@ El análisis reveló que:
 
 ---
 
-## 🚀 Conclusión
+## 🚀 Conclusión Final
 
-Este proyecto revela cómo el mercado laboral en IA continúa expandiéndose y generando salarios competitivos, especialmente en roles especializados. También evidencia la importancia estratégica de ciertas habilidades avanzadas, que aunque menos frecuentes, concentran los salarios más altos en la industria tech.
+El análisis demuestra que el mercado laboral en IA continúa creciendo con fuerza. Roles especializados en Inteligencia Artificial presentan mejores salarios, especialmente en niveles de seniority altos.
+
+Además, habilidades avanzadas —aunque poco frecuentes— generan oportunidades económicas muy significativas.
+
+Este trabajo permite entender no solo el estado actual del mercado, sino también hacia dónde se dirige la demanda global de talento en IA.
