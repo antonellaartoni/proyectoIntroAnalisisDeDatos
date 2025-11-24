@@ -1,5 +1,5 @@
 
-# 📊 AI Labor Market & Salary Trends Analysis (2025)
+# 📊 Análisis del Mercado Laboral y Salarial en IA (2025)
 
 Este proyecto analiza el *Global AI Job Market & Salary Trends 2025*, un dataset con miles de ofertas laborales globales relacionadas con Inteligencia Artificial y desarrollo de software. El objetivo es comprender:
 
